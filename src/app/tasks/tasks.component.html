@@ -1,0 +1,22 @@
+<div class="container border">
+    <div class="text-center container p3 my-3 border">  {{ title }} </div>
+  
+    <div class="text-center container p3 my-3 border">
+      <form [formGroup]="taskForm" (ngSubmit)="addTask()" (keyup.enter)="addTask()" >
+        <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="title" formControlName="title" class="form-control" placeholder="Title " id="title" >
+      </div>
+      <div class="form-group">
+        <label for="info">Description:</label>
+        <textarea  type="info" formControlName="description" class="form-control" placeholder="Description of this task " rows="3" id="info" ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  
+    <task-list [taskList] = "taskList" (removeTask) = "removeTask($event)"></task-list>
+  
+  </div>
+  <router-outlet></router-outlet>
+  

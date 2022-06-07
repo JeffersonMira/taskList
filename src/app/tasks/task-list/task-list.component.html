@@ -1,0 +1,13 @@
+<div class="text-center container p3 my-3 border">
+    <div *ngFor="let task of taskList; index as i">
+      <div class="row">
+        <div class="col-2">{{task.title}}</div>
+        <div class="col-8">{{task.description}}</div>
+        <div class="col-1">
+          <button type="button" class="close" aria-label="Close" (click)="removeThisTask(i)">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
