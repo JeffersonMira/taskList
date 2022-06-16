@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Task } from '../shared/task';
+import { TaskService } from '../shared/task-service.service';
 
 @Component({
   selector: 'app-tasks',
@@ -11,19 +12,28 @@ export class TasksComponent {
 
   title = 'TODO list';
   taskForm = new FormGroup({
-    title : new FormControl(''),
-    description : new FormControl('')
+    title: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required)
   });
+  
+  constructor(private taskService : TaskService){ }
 
-  taskList: Task[] = []
-
-  addTask(){
-    this.taskList.push(this.taskForm.value);
+  addTask() {
+    if (this.taskForm.valid) {
+      this.taskService.addTask(this.taskForm.value);
+      this.taskForm.reset();
+    }
   }
 
-  removeTask(index : number){
-    console.log("parent")
-    this.taskList.splice(index, 1)
+  removeTask(index: number) {
+    this.taskService.removeTask(index)
   }
 
+  listTasks() {
+    var taskList: Task[] = []
+    this.taskService.getTasks()
+      .subscribe(t => taskList = t);
+
+    return taskList;
+  }
 }
