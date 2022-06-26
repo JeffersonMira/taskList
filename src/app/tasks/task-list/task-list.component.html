@@ -2,12 +2,16 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Status</th>
         <th scope="col">Task</th>
         <th scope="col">Description</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let task of taskList; index as i">
+        <td>{{task.id}}</td>
+        <td>{{task.status}}</td>
         <td>{{task.title}}</td>
         <td>{{task.description}}</td>
         <td> <button type="button" class="close" aria-label="Close" (click)="removeThisTask(i)">

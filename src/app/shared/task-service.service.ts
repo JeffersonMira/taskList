@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from './task';
+import { Task, Status } from './task';
 import { Observable, of } from 'rxjs';
 
 
@@ -9,10 +9,13 @@ import { Observable, of } from 'rxjs';
 export class TaskService {
 
   taskList: Task[] = []
+  idCounter: number = 0;
 
   constructor() { }
 
   addTask(task: Task){
+    task.id = this.idCounter++;
+    task.status = Status.NEW
     this.taskList.push(task)
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Task } from '../shared/task';
 import { TaskService } from '../shared/task-service.service';
@@ -8,32 +8,28 @@ import { TaskService } from '../shared/task-service.service';
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.css']
 })
-export class TasksComponent {
+export class TasksComponent implements OnInit{
 
   title = 'TODO list';
-  taskForm = new FormGroup({
-    title: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required)
-  });
-  
-  constructor(private taskService : TaskService){ }
+  taskList: Task[] = []
 
-  addTask() {
-    if (this.taskForm.valid) {
-      this.taskService.addTask(this.taskForm.value);
-      this.taskForm.reset();
-    }
+  
+  constructor(private taskService : TaskService){ 
+
+    console.log("This module is loaded")
+  }
+
+  ngOnInit(): void {
+    this.refreshList()
   }
 
   removeTask(index: number) {
     this.taskService.removeTask(index)
+    this.refreshList();
   }
 
-  listTasks() {
-    var taskList: Task[] = []
+  refreshList() {
     this.taskService.getTasks()
-      .subscribe(t => taskList = t);
-
-    return taskList;
+      .subscribe(t => this.taskList = t);
   }
 }

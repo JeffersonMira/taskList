@@ -17,7 +17,6 @@ export class TaskListComponent implements OnInit {
   }
 
   removeThisTask(index : number){3
-    console.log("child")
     this.removeTask.emit(index);
   }
 

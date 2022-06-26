@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { TasksComponent } from './tasks/tasks.component';
-import { TaskListComponent } from './tasks/task-list/task-list.component'; // <-- NgModel lives here
+import { TaskListComponent } from './tasks/task-list/task-list.component';
+import { AddTaskComponent } from './tasks/add-task/add-task.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    TaskListComponent
+    TaskListComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
