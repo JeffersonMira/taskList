@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskListComponent } from './tasks/task-list/task-list.component';
 import { AddTaskComponent } from './tasks/add-task/add-task.component'; // <-- NgModel lives here
+import { EditTaskComponent } from './tasks/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
     TaskListComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,

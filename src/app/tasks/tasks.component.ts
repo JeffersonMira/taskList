@@ -15,7 +15,6 @@ export class TasksComponent implements OnInit{
 
   
   constructor(private taskService : TaskService){ 
-
     console.log("This module is loaded")
   }
 

@@ -24,6 +24,12 @@ export class TaskService {
     return tasks
   }
 
+  getTask(i : number): Observable<Task>{
+
+    //TODO need implementation
+    return new Observable; 
+  }
+
   removeTask(index: number) {
     this.taskList.splice(index, 1)
   }

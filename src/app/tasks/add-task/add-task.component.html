@@ -1,18 +1,20 @@
 <div class="container pxy-3 my-3 border">
-    <form [formGroup]="taskForm" (ngSubmit)="addTask()" (keyup.enter)="addTask()">
-      <div class="form-row">
-        <div class="col">
-          <label for="title">Title</label>
-          <input type="title" formControlName="title" class="form-control" placeholder="Title " id="title" required>
-        </div>
-        <div class="col">
-          <label for="info">Description</label>
-          <textarea type="info" formControlName="description" class="form-control"
-            placeholder="Description of this task " rows="3" id="info" required></textarea>
-        </div>
+  <form [formGroup]="taskForm" (ngSubmit)="addTask()" (keyup.enter)="addTask()">
+    <div class="form-group row">
+      <label for="title" class="col-sm-2 col-form-label">Title</label>
+      <div class="col-sm-10">
+        <input type="title" formControlName="title" class="form-control" placeholder="Title " id="title" required>
       </div>
-      <div class="form-row text-center">
-        <button type="submit" class="center btn-primary">Submit</button>
+    </div>
+    <div class="form-group row">
+      <label for="info" class="col-sm-2 col-form-label">Description</label>
+      <div class="col-sm-10">
+        <textarea type="info" formControlName="description" class="form-control" placeholder="Description of this task "
+          rows="3" id="info" required></textarea>
       </div>
-    </form>
-  </div>
+    </div>
+    <div class="form-group row text-center">
+      <button type="submit" class="center btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

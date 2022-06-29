@@ -1,6 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { TaskService } from 'src/app/shared/task-service.service';
 
 @Component({
@@ -16,8 +16,7 @@ export class AddTaskComponent implements OnInit {
   });
 
   constructor(private taskService : TaskService,
-    private router : Router,
-    private route : ActivatedRoute) { }
+    private router : Router) { }
 
   ngOnInit(): void {
   }
