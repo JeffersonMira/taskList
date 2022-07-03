@@ -1,1 +1,9 @@
 <router-outlet></router-outlet>
+
+<!--It is loading twice, I know. It is just used to test the lazy loading, so I dont care about it :D -->
+<div *ngIf="showText" class="container" (click)="hideInitialText()" >
+  <div class="row justify-content-center align-items-center"  routerLink="tasks">
+    Welcome - this project is just for training
+  </div>
+</div>
+

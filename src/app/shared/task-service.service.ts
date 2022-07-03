@@ -36,8 +36,6 @@ export class TaskService {
   updateTask(updatedtask: Task){
     let indexToUpdate = this.taskList.findIndex(task => task.id == updatedtask.id)
     this.taskList[indexToUpdate] = updatedtask
-
-    this.taskList.forEach(task => console.log(task))
   }
 
   removeTask(index: number) {

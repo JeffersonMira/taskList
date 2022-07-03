@@ -1,7 +1,7 @@
 <div class="container pxy-3 my-3 border">
 
   <div class="row justify-content-center align-items-center h4">
-    Editing Task {{ id }}
+    Editing Task '{{ taskForm.value.title }}'
   </div>
 
   <form [formGroup]="taskForm" (ngSubmit)="editTask()" (keyup.enter)="editTask()">
@@ -32,8 +32,8 @@
                           placeholder="Description of this task " rows="3" id="info" required></textarea>
       </div>
     </div>
-    <div class="form-group row text-center">
-      <button type="submit" class="center btn-primary">Submit</button>
+    <div class="form-group row justify-content-center align-items-center">
+        <button type="submit" class="btn btn-outline-success" [disabled]="taskForm.invalid">Update task</button>
     </div>
   </form>
 </div>
