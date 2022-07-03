@@ -13,8 +13,8 @@ export class TasksComponent implements OnInit{
   title = 'TODO list';
   taskList: Task[] = []
 
-  
-  constructor(private taskService : TaskService){ 
+
+  constructor(private taskService : TaskService){
     console.log("This module is loaded")
   }
 
@@ -24,9 +24,10 @@ export class TasksComponent implements OnInit{
 
   removeTask(index: number) {
     this.taskService.removeTask(index)
-    this.refreshList();
   }
 
+  // It is not needed because the getTasks returns an observable, so each change done in the list of tasks
+  // that is done is propagated to its subscribers - in this case the getTasks from task-list component
   refreshList() {
     this.taskService.getTasks()
       .subscribe(t => this.taskList = t);

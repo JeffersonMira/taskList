@@ -18,8 +18,7 @@ export class AddTaskComponent implements OnInit {
   constructor(private taskService : TaskService,
     private router : Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   addTask() {
     if (this.taskForm.valid) {
@@ -30,5 +29,6 @@ export class AddTaskComponent implements OnInit {
       );
     }
   }
+
 
 }
