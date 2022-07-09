@@ -7,9 +7,10 @@
     <div class="form-group row">
       <label for="title" class="col-sm-2 col-form-label">Title</label>
       <div class="col-sm-10">
-        <input type="title" formControlName="title" name="title" class="form-control" placeholder="Title " id="title" required>
+        <input type="title" formControlName="title" name="title" class="form-control" placeholder="Title " id="title"
+               required>
         <div *ngIf="taskForm.controls['title'].invalid && (taskForm.controls['title'].dirty)" class="alert">
-          <div *ngIf="taskForm.controls['title'].errors?.['required']" >
+          <div *ngIf="taskForm.controls['title'].errors?.['required']">
             Title is a mandatory field
           </div>
         </div>
@@ -28,7 +29,13 @@
       </div>
     </div>
     <div class="form-group row justify-content-center align-items-center">
-      <button type="submit" class="btn btn-outline-success" [disabled]="!taskForm.dirty || taskForm.invalid ">Submit</button>
+      <div *ngIf="taskForm.errors?.['valuesAreEqual']" class="alert">
+        Title and Description must not match (doesnt makes sense.. it is just for training :P)
+      </div>
+    </div>
+    <div class="form-group row justify-content-center align-items-center">
+      <button type="submit" class="btn btn-outline-success" [disabled]="!taskForm.dirty || taskForm.invalid ">Submit
+      </button>
     </div>
   </form>
 </div>
