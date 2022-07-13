@@ -35,7 +35,10 @@ export class EditTaskComponent implements OnInit {
     });
 
     //Inserting the value into page's form
-    this.service.getTask(this.id).subscribe( data => { console.log(data); data != undefined ? this.taskForm.patchValue(data): ""});
+    this.service.getTask(this.id).subscribe(
+      data => {
+        data != undefined ? this.taskForm.patchValue(data): ""
+      });
   }
 
   editTask() {

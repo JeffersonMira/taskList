@@ -10,7 +10,6 @@ export class TaskListComponent implements OnInit {
 
   @Input('taskList') taskList: Task[] = [];
   @Output() removeTask = new EventEmitter<number>();
-  @Output() editTask = new EventEmitter<number>();
 
   constructor() { }
 
@@ -20,9 +19,4 @@ export class TaskListComponent implements OnInit {
   removeThisTask(index : number){
     this.removeTask.emit(index);
   }
-
-  editThisTask(index : number){
-    this.editTask.emit(index);
-  }
-
 }

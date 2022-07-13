@@ -10,7 +10,7 @@ export class TaskService {
 
   taskList: Task[] = [
     {id:0, title:"Study AWS", description:"Study to take the AWS certification", status: Status.NEW},
-    {id:1, title:"Learn French", description:"Find some way to learn French faster", status: Status.NEW}
+    {id:1, title:"Learn French", description:"Find some way to learn French faster", status: Status.FINISHED}
   ]
   idCounter: number = 2
 

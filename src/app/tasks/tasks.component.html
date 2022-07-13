@@ -6,7 +6,7 @@
     <div class="col-sm link"  routerLink="/tasks">
       <h1 class="mb-7">ToDo List App</h1>
     </div>
-    <div class="col-sm-4 text-right">
+    <div class="col-sm-4 text-right" >
       <span  routerLink="add" class="h5 link">
         <img src="../../assets/logo.svg" alt="logo"/>
         Add new task
@@ -17,5 +17,10 @@
   <router-outlet></router-outlet>
 
   <task-list [taskList]="taskList" (removeTask)="removeTask($event)"></task-list>
+
+
+
+
+
 
 </div>
