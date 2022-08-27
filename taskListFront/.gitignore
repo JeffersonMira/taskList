@@ -1,0 +1,116 @@
+Skip to content
+Product 
+Team
+Enterprise
+Explore 
+Marketplace
+Pricing 
+Search
+Sign in
+Sign up
+aksakalli
+/
+todo-spring-angular
+Public
+Code
+Issues
+Pull requests
+3
+Actions
+Projects
+Security
+Insights
+todo-spring-angular/todo-rest/.gitignore
+@aksakalli
+aksakalli init
+Latest commit 93527e0 on 20 Apr 2016
+ History
+ 1 contributor
+70 lines (60 sloc)  836 Bytes
+
+.springBeans
+buildRun.sh
+
+######################
+# Eclipse
+######################
+*.pydevproject
+.project
+.metadata
+/bin/**
+/tmp/**
+/tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/**
+.loadpath
+/src/main/resources/rebel.xml
+
+# External tool builders
+.externalToolBuilders/**
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+######################
+# Intellij
+######################
+.idea/**
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+######################
+# Directories
+######################
+/build/**
+/bin/**
+/spring_loaded/**
+/deploy/**
+
+######################
+# Logs
+######################
+*.log
+
+######################
+# Others
+######################
+*.class
+*.*~
+*~
+.merge_file*
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+/node_modules/

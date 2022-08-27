@@ -1,0 +1,28 @@
+<div class="text-center container p3 my-3 border">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Task</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of taskList; index as i" >
+          <td>{{task.id}}</td>
+          <td>{{task.status | taskStatusPipe}}</td>
+          <td>{{task.title}}</td>
+          <td>{{task.description}}</td>
+          <td>
+            <button type="button" class="close" aria-label="Close" (click)="removeThisTask(i)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </td>
+          <td >
+            <button *hideForStatus="task.status; remove 'FINISHED'" type="button" class="btn btn-outline-secondar" [routerLink]="['edit', i]"> Edit</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,15 @@
+## Testing simple requests using intellij http requests
+POST localhost:8080/task
+Content-Type: application/json
+
+{
+  "id": 999,
+  "title": "Testing",
+  "description" : "Testing creation MONGODB",
+  "status" : "NEW"
+}
+
+
+### Send POST request with body as parameters
+DELETE localhost:8080/task/999
+Content-Type: application/json
