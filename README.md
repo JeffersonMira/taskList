@@ -1,4 +1,4 @@
-# Build the project
+# Build the task-list-back project
 gradle clean build
 
 # build the images
